@@ -14,10 +14,11 @@ pipeline {
                 }
             }
         }
+        stage ('Run Test') {
+            steps {
+                sh "docker run ${env.ARTIFACT_ID} npm test"
+            }
     }
-    stages('Run Test') {
-        steps {
-            sh "docker run ${env.ARTIFACT_ID} npm test"
-        }
     }
+    
 }
