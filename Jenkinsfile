@@ -14,7 +14,7 @@ pipeline {
                 }
             }
         }
-        stage ('Run Test') {
+        stage('Run Test'){
             steps {
                 sh "docker run ${env.ARTIFACT_ID} npm test"
             }
